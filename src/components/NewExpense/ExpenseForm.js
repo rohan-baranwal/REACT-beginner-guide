@@ -43,17 +43,26 @@ const ExpenseForm = () => {
   };
 
   const amountChangeHandler = (event) => {
-    console.log(event.target.value, typeof event.target.value);
     setEnteredAmount(event.target.value);
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-    console.log(event.target.value, typeof event.target.value);
+  };
+
+  const sumbitHandler = (event) => {
+    event.preventDefault();
+    const expenseData = {
+      title: enteredTitle,
+      amount: Number(enteredAmount),
+      date: new Date(enteredDate),
+    };
+
+    console.log(expenseData);
   };
 
   return (
-    <form>
+    <form onSubmit={sumbitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
