@@ -8,9 +8,7 @@ const ExpenseItem = (props) => {
   let dated = props.date
   const clickHandler = () => {
     setTitle("Updated");
-    console.log(title);
     dated = new Date();
-    console.log(dated);
   };
 
   return (
