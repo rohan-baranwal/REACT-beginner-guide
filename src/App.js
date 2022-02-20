@@ -29,6 +29,9 @@ const App = () => {
   const addExpenseHandler = (expenseData) => {
     console.log(expenseData);
   };
+  const changeYearFilterHandler = (selectedYear) => {
+    console.log(selectedYear);
+  };
 
   // * Alternative way using JSX
   // return React.createElement(
@@ -41,7 +44,7 @@ const App = () => {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses onYearFilterChange={changeYearFilterHandler} items={expenses} />
     </div>
   );
 };
